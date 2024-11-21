@@ -19,8 +19,12 @@ if (is_home()) {
 	array_unshift( $templates, 'templates/front-page.twig', 'templates/home.twig' );
 }
 
+$random_pub = Timber::get_posts('orderby=rand&posts_per_page=1&post_type=publication');
+
 $context = Timber::context([
-	'foo'   => 'bar',
+    'recent_article_title' => 'Recent Articles',
+    'publication_title' => 'From the Publication Archive',
+    'random_pub' => $random_pub
 ]);
 
 Timber::render($templates, $context);
