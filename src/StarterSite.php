@@ -28,6 +28,55 @@ class StarterSite extends Site
 	 */
 	public function register_post_types()
 	{
+		$publication_args = array(
+			'labels' => array(
+				'name' => 'Publications',
+				'singular_name' => 'Publication',
+				'add_new_item' => 'Add New Publication',
+				'edit_item' => 'Edit Publication',
+				'new_item' => 'New Publication',
+				'view_item' => 'View Publication',
+				'view_items' => 'View Publications',
+				'search_items' => 'Search Publications',
+				'not_found' => 'No publication found',
+				'not_found_in_trash' => 'No publication found in trash',
+				'all_items' => 'All Publications',
+				'archives' => 'Publication Archives',
+				'attributes' => 'Publication Attributes',
+				'insert_into_item' => 'Insert into publication',
+				'uploaded_to_this_item' => 'Uploaded to this publication',
+				'filter_items_list' => 'Filter publications list',
+				'items_list_navigation' => 'Publications list navigation',
+				'items_list' => 'Publications list',
+				'item_published' => 'Publication published...',
+				'item_published_privately' => 'Publication published privately...',
+				'item_reverted_to_draft' => 'Publication reverted to draft.',
+				'item_trashed' => 'Publication trashed.',
+				'item_scheduled' => 'Publication scheduled.',
+				'item_updated' => 'Publication updated.',
+				'item_link' => 'Publication Link',
+				'item_link_description' => 'A link to a publication.'
+			),
+			'description' => 'Datasheets, brochures, flyers, white papers, etc.',
+			'public' => true,
+			'show_in_rest' => true,
+			'menu_icon' => 'dashicons-admin-page',
+			'supports' => array(
+				'title',
+				'editor',
+				'author',
+				'excerpt',
+				'thumbnail'
+			),
+			'has_archive' => 'publications',
+			'rewrite' => array('slug' => 'publication'),
+			'template' => array(
+				array('core/image'),
+				array('core/paragraph')
+			)
+		);
+
+		register_post_type( 'publication', $publication_args );
 	}
 
 	/**
