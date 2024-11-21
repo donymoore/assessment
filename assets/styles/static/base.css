@@ -9,7 +9,7 @@ header {
 h1,h2,h3,h4 {
   font-family: "Geist Mono", monospace;
   font-optical-sizing: auto;
-  font-style: normal;  
+  font-style: normal;
 }
 h1 {
   height: 240px;
@@ -54,6 +54,9 @@ h2 {
   line-height: 50px;
   text-decoration: none;
   padding: 0 10px;
+  font-family: "Geist Mono", monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 #nav-main a:hover {
   display: inline-block;
@@ -84,6 +87,22 @@ h2 {
 }
 .pagination-block {
   clear: both;
+  margin-top: 20px;
+  border-top: 1px solid transparent;
+}
+.pagination-block a {
+  border: 1px solid black;
+  border-radius: 4px;
+  text-decoration: none;
+  padding: 0 5px;
+}
+.pagination-block a:hover {
+  color: #EEE;
+  background-color: #111;
+}
+.pagination-block a.page-number {
+  border: none;
+  padding: 0;
 }
 .pagination-block li {
   display: inline;
