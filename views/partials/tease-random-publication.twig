@@ -1,0 +1,12 @@
+{% extends 'partials/tease.twig' %}
+
+{% block content %}
+        <h2>{{ publication_title }}</h2>
+        {% for random_pub in random_pub %}
+            <h3><a href="{{ random_pub.link }}">{{ random_pub.title }}</a></h3>
+            {% if random_pub.thumbnail %}
+                <img src="{{ random_pub.thumbnail }}" alt="{{ random_pub.thumbnail.alt }}" title="{{ random_pub.thumbnail.alt }}" />
+            {% endif %}
+            <p>{{ random_pub.content }}</p>
+        {% endfor %}
+{% endblock %}

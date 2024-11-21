@@ -1,7 +1,13 @@
 {% extends 'layouts/base.twig' %}
 
 {% block content %}
-    <h2>{{ foo }}</h2>
+    {% if random_pub %}
+        <article id="home-pub-display">
+            {% include ['partials/tease-random-publication.twig'] %}
+        </article>
+    {% endif %}
+    
+    <h2>{{ recent_article_title }}</h2>
     {% for post in posts %}
         {% include ['partials/tease-' ~ post.type ~ '.twig', 'partials/tease.twig'] %}
     {% endfor %}
